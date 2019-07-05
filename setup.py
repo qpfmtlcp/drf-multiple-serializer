@@ -15,6 +15,7 @@ setup(
     license="MIT",
     description='Django REST framework serializer utility',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     author='jay kim',
     author_email='jaykim1361@gmail.com',
     url='https://github.com/qpfmtlcp/drf-multiple-serializer',
