@@ -16,7 +16,7 @@ There is no need to modify your INSTALLED_APPS setting.
 
 ## Usage
 
-Set the serializer to serializer_classes with the viewset action.
+Set the serializer to serializer_classes with the viewset action.  
 The rest of the actions use the default serializer.
 
 ```
@@ -27,7 +27,7 @@ from .models import Category, Item
 
 
 class CategoryViewSet(MultipleSerializerMixin,
-                  viewsets.ModelViewSet):
+                      viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_classes = {
         'default': CategorySerializer,
