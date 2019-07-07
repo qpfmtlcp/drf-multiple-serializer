@@ -5,7 +5,7 @@ Extension for using multiple serializer in Django REST Framework.
 
 ## Installation
 
-Install from PyPI
+Install from [PyPI](https://pypi.org/project/drf-multiple-serializer/)
 
 ```
 pip install drf-multiple-serializer
