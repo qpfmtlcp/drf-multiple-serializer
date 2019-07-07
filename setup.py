@@ -19,7 +19,7 @@ setup(
     author='jay kim',
     author_email='jaykim1361@gmail.com',
     url='https://github.com/qpfmtlcp/drf-multiple-serializer',
-    packages=find_packages(),
+    packages=find_packages(include=('drf_multiple_serializer')),
     install_requires=[
         'Django>=1.11',
         'djangorestframework>=3.8',
