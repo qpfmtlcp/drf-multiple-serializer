@@ -1,5 +1,7 @@
 # DRF multiple serializer
 
+[![Build Status](https://travis-ci.org/qpfmtlcp/drf-multiple-serializer.svg?branch=master)](https://travis-ci.org/qpfmtlcp/drf-multiple-serializer)
+
 Extension for using multiple serializer in Django REST Framework.
 
 
