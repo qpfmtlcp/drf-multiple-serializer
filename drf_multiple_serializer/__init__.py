@@ -1,3 +1,3 @@
-from .mixins import MultipleSerializerMixin
+from .mixins import ActionBaseSerializerMixin, ReadWriteSerializerMixin
 
-__version__ = '0.1.1'
+__version__ = '0.2.0'
