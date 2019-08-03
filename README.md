@@ -18,6 +18,8 @@ There is no need to modify your INSTALLED_APPS setting.
 
 ## Usage
 
+### Action Base
+
 Set the serializer to serializer_classes with the viewset action.  
 The rest of the actions use the default serializer.
 
@@ -25,10 +27,8 @@ The rest of the actions use the default serializer.
 from rest_framework import viewsets
 from drf_multiple_serializer import MultipleSerializerMixin
 
-from .models import Category, Item
 
-
-class CategoryViewSet(MultipleSerializerMixin,
+class CategoryViewSet(ActionBaseSerializerMixin,
                       viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_classes = {
@@ -37,12 +37,32 @@ class CategoryViewSet(MultipleSerializerMixin,
         'retrieve': CategoryReadSerializer,
     }
 
+```
 
-class ItemViewSet(MultipleSerializerMixin,
+### Read & Write
+
+Set the read & write serializer to serializer_classes.  
+List, Retrieve actions use a read serializer,  
+and the other actions (include delete) use a write serializer.
+
+```
+from rest_framework import viewsets
+from drf_multiple_serializer import ReadWriteSerializerMixin
+
+
+class ItemViewSet(ReadWriteSerializerMixin,
                   viewsets.ModelViewSet):
     queryset = Item.objects.all()
     serializer_classes = {
-        'default': ItemSerializer,
-        'create': ItemWriteSerializer,
+        'read': ItemReadSerializer,
+        'write': ItemWriteSerializer,
     }
+```
+
+## Test
+
+```
+> python3 -m venv venv
+> source venv/bin/activate
+(venv) > pytest
 ```
